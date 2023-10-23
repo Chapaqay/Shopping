@@ -33,7 +33,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
     @NonNull
     @Override
     public CartListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_cart,parent,false);
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_cart,parent,false);
         return new ViewHolder(inflate);
     }
 
@@ -41,7 +41,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
     public void onBindViewHolder(@NonNull CartListAdapter.ViewHolder holder, int position) {
         holder.titleTxt.setText(listItemSelected.get(position).getTitle());
         holder.feeEachItem.setText("$"+ listItemSelected.get(position).getPrice());
-        holder.totalEachItem.setText("$"+Math.round((listItemSelected.get(position).getNumberinCart() * listItemSelected.get(position).getPrice())));
+        holder.totalEachItem.setText("$"+ Math.round((listItemSelected.get(position).getNumberinCart() * listItemSelected.get(position).getPrice())));
         holder.num.setText(String.valueOf(listItemSelected.get(position).getNumberinCart()));
 
         int drawableResourceId = holder.itemView.getContext().getResources()
